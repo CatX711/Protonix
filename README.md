@@ -19,7 +19,7 @@
 <br />
 
 Syntax test
-```rs
+```js
 include stdio
 
 main :: (){
