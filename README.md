@@ -19,7 +19,7 @@
 <br />
 
 Syntax test
-```c
+```go
 include stdio
 
 main :: (){
