@@ -1,6 +1,6 @@
 # Protonix
 
-<img width="643" alt="Screenshot 2023-12-25 at 00 01 53" src="https://github.com/CatX711/Protonix/assets/104099162/1a9dfe3e-9558-421d-930f-0c05fd6d4544">
+<p align="center"> <img width="643" alt="Screenshot 2023-12-25 at 00 01 53" src="https://github.com/CatX711/Protonix/assets/104099162/1a9dfe3e-9558-421d-930f-0c05fd6d4544"> </p>
 
 <br />
 <br />
