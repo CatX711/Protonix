@@ -47,20 +47,43 @@ DATATYPES:
     FALSE <-- false bool
 
     STRINGS:
-    string::new("") <-- create a new string
+    String::new("") <-- create a new string
 ```    
+
+
+<br />
+<br />
+<br />
+
+
+## Hello
+
+<br />
+<br />
+
+Here is a simple output program using Protonix.
+
+<br />
+
+```rs
+main :: (){
+    print("Hello from the Protonix Compiler!")
+}
+```
 
 
 <!--
 Syntax test
 ```rs
-include stdio
+include stdio::*;
 
 main :: (){
-    var mystring string::new("Bolablaca")
+    var mystring String::new("Bolablaca")
 
     print("Hello from the Protonix Compiler!")
     print("{!mystring}")
+
+    stdio::scan(something i dunno);
 }
 ```
 -->
