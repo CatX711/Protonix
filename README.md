@@ -77,7 +77,8 @@ main :: (){
 <br />
 
 As we can see, no standard library is needed to create a basic program. Variable definition, printing and outputting all comes with Protonix's compiler. Let's break this program down. <br />
-In Protonix, we use :: to assign something to another thing. The way we define a function is by assinging `main` open and closes brackets. This is what makes it a function.
+In Protonix, we use :: to assign a type to another thing. The way we define a function is by assinging `main` some open and closes brackets. This is what makes it a function.
+We are giving main the type of a function.
 
 <br />
 <br />
@@ -116,12 +117,12 @@ Syntax test
 include stdio::*
 
 main :: (){
-    var mystring :: String.new("Bolablaca")
+    mystring :: String.new("Bolablaca")
 
     print("Hello from the Protonix Compiler!")
     print("{!mystring}")
 
-    stdio::scan(something i dunno);
+    stdio.scan(something i dunno);
 }
 ```
 -->
