@@ -23,7 +23,7 @@
 
 DATATYPES:
 
-```go
+``c
     INTEGERS:   
     int8 <-- 8 bit int  
     int16 <-- 16 bit int
