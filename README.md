@@ -23,6 +23,31 @@
 
 DATATYPES:
 
+    INTEGERS:   
+    int8 <-- 8 bit int  
+    int16 <-- 16 bit int
+    int32 <-- 32 bit int
+    int64 <-- 64 bit int
+    int128 <-- 128 bit int
+    Icomplex <-- complex int
+
+    u8 <-- unsigned 8 bit int   
+    u16 <-- unsigned 16 bit int
+    u32 <- unsigned 32 bit int
+    u64 <-- unsigned 32 bit int
+    u128 <-- unsigned 128 bit int 
+
+    FLOATS:   
+    float32 <-- 32 bit float
+    float64 <-- 64 bit float 
+
+    BOOLEANS:
+    TRUE <-- true bool
+    FALSE <-- false bool
+
+    STRINGS:
+    string::new("") <-- create a new string
+    
 
 
 <!--
@@ -31,7 +56,10 @@ Syntax test
 include stdio
 
 main :: (){
+    var mystring string::new("Bolablaca")
+
     print("Hello from the Protonix Compiler!")
+    print("{!mystring}")
 }
 ```
 -->
