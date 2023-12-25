@@ -65,11 +65,24 @@ Here is a simple output program using Protonix.
 
 <br />
 
+FILENAME: hello.px
 ```rs
+
 main :: (){
     print("Hello from the Protonix Compiler!")
 }
 ```
+
+<br />
+<br />
+
+As we can see, no standard library is needed to create a basic program. Variable definition, printing and outputting all comes with Protonix's compiler. Let's break this program down. <br />
+In Protonix, we use :: to assign something to another thing. The way we define a function is by assinging `main` open and closes brackets. This is what makes it a function.
+
+<br />
+<br />
+
+Main is the entry point to every Protonix program, so main's code will be prioritized over everything else. <br />
 
 
 <!--
