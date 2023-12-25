@@ -23,6 +23,7 @@
 
 DATATYPES:
 
+```go
     INTEGERS:   
     int8 <-- 8 bit int  
     int16 <-- 16 bit int
@@ -47,7 +48,7 @@ DATATYPES:
 
     STRINGS:
     string::new("") <-- create a new string
-    
+```    
 
 
 <!--
