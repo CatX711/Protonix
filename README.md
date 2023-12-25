@@ -47,7 +47,7 @@ DATATYPES:
     FALSE <-- false bool
 
     STRINGS:
-    String::new("") <-- create a new string
+    String.new("") <-- create a new string
 ```    
 
 
@@ -94,7 +94,19 @@ Main is the entry point to every Protonix program, so main's code will be priori
 <br />
 <br />
 
+Here is a program that defines two variables and then prints them. 
 
+<br />
+
+FILENAME: vars.px
+```rs
+main :: (){
+    mystring :: String.new("Blablabla")
+    myint :: int = 86
+
+    print("{!mystring} {!myint}") // Blablabla 86
+}
+```
 
 
 
@@ -104,7 +116,7 @@ Syntax test
 include stdio::*
 
 main :: (){
-    var mystring String::new("Bolablaca")
+    var mystring :: String.new("Bolablaca")
 
     print("Hello from the Protonix Compiler!")
     print("{!mystring}")
