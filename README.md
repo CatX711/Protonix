@@ -85,11 +85,23 @@ In Protonix, we use :: to assign something to another thing. The way we define a
 Main is the entry point to every Protonix program, so main's code will be prioritized over everything else. <br />
 
 
+<br />
+<br />
+<br />
+
+# Variables
+
+<br />
+<br />
+
+
+
+
 
 <!--
 Syntax test
 ```rs
-include stdio::*;
+include stdio::*
 
 main :: (){
     var mystring String::new("Bolablaca")
