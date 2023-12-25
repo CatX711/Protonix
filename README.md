@@ -32,11 +32,11 @@ DATATYPES:
     int128 <-- 128 bit int
     Icomplex <-- complex int
 
-    u8 <-- unsigned 8 bit int   
-    u16 <-- unsigned 16 bit int
-    u32 <- unsigned 32 bit int
-    u64 <-- unsigned 32 bit int
-    u128 <-- unsigned 128 bit int 
+    ui8 <-- unsigned 8 bit int   
+    ui16 <-- unsigned 16 bit int
+    ui32 <- unsigned 32 bit int
+    ui64 <-- unsigned 32 bit int
+    ui128 <-- unsigned 128 bit int 
 
     FLOATS:   
     float32 <-- 32 bit float
