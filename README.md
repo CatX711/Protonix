@@ -234,11 +234,11 @@ Usage Example:
 
 ```js
 main :: (){
-    result :: divide_numbers(10.0, 2.0) :: Outcome<>
+    result :: divide_numbers(10.0, 2.0)
     
     check result {
-        case Success(output) | print("Result: {:output}")
-        case Failure(error)  | print("Error: {:error}")
+        case Success(output) | print("Result: {:output}") // look for correct success case and return result
+        case Failure(error)  | print("Error: {:error}") // look for correct faliure case and return result
     }
 }
 ```
@@ -271,9 +271,39 @@ Outcomes can have any amount of returns types. Here's an example for this.
 
 ```js
 
-checkVar :: (variable_name:str) -> Outcome<str, str, str, str, int>
+checkStringVar :: (variable:str) -> Outcome<str, str, str, str, int>{
+    Outcome{
+        if variable = "Hello"{
+             Success(print("Hello!"))
+        }
+        if variable = "Java"{
+            Success(print("Be quiet, you're giving me PTSD!"))
+        }
+        if variable = "Bananas"{
+            Success(print("What about them?"))
+        }
+        if variable.type = int{ // check type with varname.type
+            Success(print("You cant use int vars with `checkStringVar`, idiot!!!"))
+        } else{ // if none of these
+            Success(print("You're a nerd"))
+        }
+    }
+}
+
+main :: (){
+    fruit :: String.new("Bananas")
+
+    result :: checkStringVar(fruit)
+    
+    check result{
+        case Success(output) | print("{:output}") // checks what's correct and output it 
+        case Faliure(error)  | print("Error: {:error}")
+    }
+}
 ```
 
+<br />
+<br />
 
 The best use case for Outcome-annotated Functions is when managing things that could easily fail and being able to <br />
 throw an error. Also, it's good for having multiple outcomes based on input.
