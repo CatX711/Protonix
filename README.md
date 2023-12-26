@@ -210,7 +210,6 @@ An Outcome encompassing two possible scenarios:
 
 Usage Example:
 
-python
 
 result :: Outcome<float, str> = divide_numbers(10.0, 2.0)
 
