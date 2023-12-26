@@ -232,8 +232,8 @@ main :: (){
     result :: Outcome<float, str> = divide_numbers(10.0, 2.0)
     
     check result {
-        case Success(value) | print("Result: {!value}")
-        case Failure(error) | print("Error: {!error}")
+        case Success(output) | print("Result: {:output}")
+        case Failure(error)  | print("Error: {:error}")
     }
 }
 ```
@@ -241,8 +241,10 @@ main :: (){
 <br />
 <br />
 
-Check is like a switch. "In a specific case, do this".
-Use the pipe `|` to provide instructions on what to do in a specific case.
+Check is like a switch. "In a specific case, do this". <br />
+Use the pipe `|` to provide instructions on what to do in a specific case. <br />
+The reason we do `{:output}` and `{:error}` instead of `{!output}` and `{!error}` is because we dont want any actual variables with those
+names to be used instead of the placeholder variables output and error.
 
 Behavior:
 
@@ -258,7 +260,7 @@ Considerations:
 <br />
 
 The best use case for Outcome-annotated Functions is when managing things that could easily fail and being able to <br />
-throw an error. Also, it's good for having multiple outcomes 
+throw an error. Also, it's good for having multiple outcomes based on input.
 
 
 <!--
