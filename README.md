@@ -262,6 +262,29 @@ Considerations:
 The best use case for Outcome-annotated Functions is when managing things that could easily fail and being able to <br />
 throw an error. Also, it's good for having multiple outcomes based on input.
 
+<br />
+<br />
+
+Speaking of input,
+
+
+<br />
+<br />
+<br />
+
+# Getting User Input Via std::io
+
+<br />
+<br />
+
+
+
+
+
+
+
+
+
 
 <!--
 Syntax test
