@@ -109,6 +109,12 @@ main :: (){
 }
 ```
 
+<br />
+<br />
+
+Here we create a new string using `String.new()` and giving it a value. <br />
+We also make an integer variable with the value of 86. Use `{!}` to output variables.
+
 
 
 <!--
