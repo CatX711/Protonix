@@ -47,7 +47,7 @@ DATATYPES:
     FALSE <-- false bool
 
     STRINGS:
-    String.new("") <-- create a new string
+    String.new("") <-- create a new string (when using string variables as parameters of a function or an outcome, we just say their type is 'str')
 ```    
 
 
@@ -189,10 +189,13 @@ Here's an example of Outcome-annotated an function:
 
 ```rs
 divide_numbers :: (a:float, b:float) -> Outcome<float, str> {
-    if b == 0.0 {
-        return Failure("Division by zero is not allowed.")
-    } else {
-        return Success(a / b)
+
+    Outcome {
+        if b == 0.0 {
+            return Failure("Division by zero is not allowed.") // string outcome
+        } else {
+            return Success(a / b) // float outcome
+        }
     }
 }
 ```
@@ -229,7 +232,7 @@ Usage Example:
 
 ```js
 main :: (){
-    result :: Outcome<float, str> = divide_numbers(10.0, 2.0)
+    result :: divide_numbers(10.0, 2.0) :: Outcome<>
     
     check result {
         case Success(output) | print("Result: {:output}")
@@ -258,6 +261,17 @@ Considerations:
 
 <br />
 <br />
+
+Outcomes can have any amount of returns types. Here's an example for this.
+
+<br />
+<br />
+
+```js
+
+checkVar :: (variable_name:str) -> Outcome<st>
+```
+
 
 The best use case for Outcome-annotated Functions is when managing things that could easily fail and being able to <br />
 throw an error. Also, it's good for having multiple outcomes based on input.
