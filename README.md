@@ -116,6 +116,119 @@ Here we create a new string using `String.new()` and giving it a value. <br />
 We also make an integer variable with the value of 86. Use `{!}` to output variables.
 
 
+<br />
+<br />
+
+
+# Functions 
+
+<br />
+<br />
+
+Functions are very powerful in Protonix. They allow for seamless code reuse, without flooding memory. <br />
+There are two types of functions: `Singular Return Type and Outcome-annotated Return Type` functions.
+
+<br />
+<br />
+<br />
+
+## Single Return Type Functions
+
+<br />
+<br />
+
+Look at this example:
+
+<br />
+
+```rs
+calculate_sum :: (a:int, b:int) -> int {
+    // Function to calculate the sum of two integers
+}
+```
+
+This function calculates the sum of two integer values (a and b). When passing in parameters, we have to describe the placeholder variables and their types. <br />
+`Calculate_sum` has a singular return type of int, straightforwardly providing the result of the addition operation.
+
+<br />
+
+***Parameters:***
+
+    a:int: First integer value for addition.
+    b:int: Second integer value for addition.
+
+<br />
+
+***Returns:***
+
+An int representing the sum of the two input integers (a + b).
+Usage Example:
+
+<br />
+
+```rs
+main :: (){
+    result :: int = calculate_sum(5, 10)
+    print("Result: {!result}") // 15
+}
+```
+
+<br />
+<br />
+<br />
+
+## Multiple Return Type Functions (Outcome-Annotated)
+
+<br />
+
+Here's an example:
+
+<br />
+<br />
+
+
+```rs
+divide_numbers :: (a:float, b:float) -> Outcome<float, str> {
+    // Function to divide two floats and handle potential outcomes
+}
+```
+
+Description:
+
+The divide_numbers function in Protonix divides two float values (a and b). It utilizes Outcome Annotations to manage potential outcomes, covering successful division scenarios and division by zero errors.
+Parameters:
+
+    a:float: Numerator value for division.
+    b:float: Denominator value for division.
+
+Returns:
+
+An Outcome encompassing two possible scenarios:
+
+    Success<float>: Indicates a successful division, returning a float result.
+    Failure<str>: Signifies an error scenario, returning an error message (str) for division by zero cases.
+
+Usage Example:
+
+python
+
+result :: Outcome<float, str> = divide_numbers(10.0, 2.0)
+
+match result {
+    case Success(value) => print("Result: {!value}")
+    case Failure(error) => print("Error: {!error}")
+}
+
+Behavior:
+
+    For a non-zero denominator (b), the function returns a Success outcome with the division result (a / b) as a float.
+
+    If the denominator (b) is zero, it returns a Failure outcome with the error message "Division by zero is not allowed."
+
+Considerations:
+
+    The functions demonstrate both singular return types and Outcome Annotations, providing examples of handling different return scenarios.
+
 
 <!--
 Syntax test
@@ -129,6 +242,19 @@ main :: (){
     print("{!mystring}")
 
     stdio.scan(something i dunno);
+}
+
+
+Math :: its{
+    
+}
+
+its Math{
+
+}
+
+toolkit Math{
+
 }
 ```
 -->
