@@ -24,7 +24,8 @@
 DATATYPES:
 
 ```c
-    INTEGERS:   
+    INTEGERS:
+    int <-- generic int, used to be a placeholder for any integer type when used in an Outcome
     int8 <-- 8 bit int  
     int16 <-- 16 bit int
     int32 <-- 32 bit int
@@ -32,6 +33,7 @@ DATATYPES:
     int128 <-- 128 bit int
     Icomplex <-- complex int
 
+    uint <-- generic unsigned int, used to be a placeholder for any unsigned integer type when used in an Outcome
     ui8 <-- unsigned 8 bit int   
     ui16 <-- unsigned 16 bit int
     ui32 <- unsigned 32 bit int
@@ -269,7 +271,7 @@ Outcomes can have any amount of returns types. Here's an example for this.
 
 ```js
 
-checkVar :: (variable_name:str) -> Outcome<st>
+checkVar :: (variable_name:str) -> Outcome<str, str, str, str, int>
 ```
 
 
