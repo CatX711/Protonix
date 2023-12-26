@@ -271,7 +271,7 @@ Outcomes can have any amount of returns types. Here's an example for this.
 
 ```js
 
-checkStringVar :: (variable:str) -> Outcome<str, str, str, str, int>{
+checkStringVar :: (variable:str) -> Outcome<str, str, str, str, str, int>{
     Outcome{
         if variable = "Hello"{
              Success(print("Hello!"))
@@ -283,9 +283,9 @@ checkStringVar :: (variable:str) -> Outcome<str, str, str, str, int>{
             Success(print("What about them?"))
         }
         if variable.type = int{ // check type with varname.type
-            Success(print("You cant use int vars with `checkStringVar`, idiot!!!"))
+            Faliure(print("You cant use int vars with `checkStringVar`, idiot!!!"))
         } else{ // if none of these
-            Success(print("You're a nerd"))
+            Success(print("You're a nerd")) // this technically returns a string, so it needs to be included in the outcome
         }
     }
 }
@@ -301,6 +301,18 @@ main :: (){
     }
 }
 ```
+
+<br />
+<br />
+
+`fruit` is equal to the string "Bananas", which will output "What about them?" <br />
+If it were equal to "Java", for example, then "Be quiet, you're giving me PTSD!" would be outputted to the screen. <br />
+If fruit was an int, then you would get the error message: `Error: You cant use int vars with ``checkStringVar``, idiot!!!`
+
+<br />
+<br />
+
+If it were none of these, you'd be called a nerd. Sad.
 
 <br />
 <br />
