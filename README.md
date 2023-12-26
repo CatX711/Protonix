@@ -143,7 +143,7 @@ Look at this example:
 
 ```rs
 calculate_sum :: (a:int, b:int) -> int {
-    // Function to calculate the sum of two integers
+    return a + b
 }
 ```
 
@@ -181,7 +181,7 @@ main :: (){
 
 <br />
 
-Here's an example:
+Here's an example of Outcome-annotated an function:
 
 <br />
 <br />
@@ -189,17 +189,31 @@ Here's an example:
 
 ```rs
 divide_numbers :: (a:float, b:float) -> Outcome<float, str> {
-    // Function to divide two floats and handle potential outcomes
+    if b == 0.0 {
+        return Failure("Division by zero is not allowed.")
+    } else {
+        return Success(a / b)
+    }
 }
 ```
+
+<br />
+<br />
+
 
 Description:
 
 The divide_numbers function in Protonix divides two float values (a and b). It utilizes Outcome Annotations to manage potential outcomes, covering successful division scenarios and division by zero errors.
+
+<br />
+<br />
+
 Parameters:
 
     a:float: Numerator value for division.
     b:float: Denominator value for division.
+
+<br />
 
 Returns:
 
@@ -208,15 +222,27 @@ An Outcome encompassing two possible scenarios:
     Success<float>: Indicates a successful division, returning a float result.
     Failure<str>: Signifies an error scenario, returning an error message (str) for division by zero cases.
 
+<br />
+<br />
+
 Usage Example:
 
-
-result :: Outcome<float, str> = divide_numbers(10.0, 2.0)
-
-match result {
-    case Success(value) => print("Result: {!value}")
-    case Failure(error) => print("Error: {!error}")
+```js
+main :: (){
+    result :: Outcome<float, str> = divide_numbers(10.0, 2.0)
+    
+    check result {
+        case Success(value) | print("Result: {!value}")
+        case Failure(error) | print("Error: {!error}")
+    }
 }
+```
+
+<br />
+<br />
+
+Check is like a switch. "In a specific case, do this".
+Use the pipe `|` to provide instructions on what to do in a specific case.
 
 Behavior:
 
@@ -227,6 +253,12 @@ Behavior:
 Considerations:
 
     The functions demonstrate both singular return types and Outcome Annotations, providing examples of handling different return scenarios.
+
+<br />
+<br />
+
+The best use case for Outcome-annotated Functions is when managing things that could easily fail and being able to <br />
+throw an error. Also, it's good for having multiple outcomes 
 
 
 <!--
