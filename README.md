@@ -141,7 +141,7 @@ Look at this example:
 
 <br />
 
-```rs
+```js
 calculate_sum :: (a:int, b:int) -> int {
     return a + b
 }
