@@ -335,6 +335,8 @@ Speaking of input,
 <br />
 <br />
 
+Bring in standard input library using `std::io`.
+<br />
 
 
 
