@@ -274,18 +274,18 @@ Outcomes can have any amount of returns types. Here's an example for this.
 checkStringVar :: (variable:str) -> Outcome<str, str, str, str, str, int>{
     Outcome{
         if variable = "Hello"{
-             Success(print("Hello!"))
+             Success("Hello!")
         }
         if variable = "Java"{
-            Success(print("Be quiet, you're giving me PTSD!"))
+            Success("Be quiet, you're giving me PTSD!")
         }
         if variable = "Bananas"{
-            Success(print("What about them?"))
+            Success("What about them?")
         }
         if variable.type = int{ // check type with varname.type
-            Faliure(print("You cant use int vars with `checkStringVar`, idiot!!!"))
+            Faliure("You cant use int vars with `checkStringVar`, idiot!!!")
         } else{ // if none of these
-            Success(print("You're a nerd")) // this technically returns a string, so it needs to be included in the outcome
+            Success("You're a nerd") // this technically returns a string, so it needs to be included in the outcome
         }
     }
 }
