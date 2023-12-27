@@ -144,36 +144,38 @@ Look at this example:
 <br />
 
 ```js
-calculate_sum :: (a:int, b:int) -> int {
-    return a + b
+// add two numbers
+
+addIntNums :: (num1:int, num2:int) -> int{
+        result :: num1 + num2
+  
+        return result
 }
+
+main :: (){
+        var1 :: int = 3
+        var2 :: int = 7
+        
+        print(addnums(var1, var2))
+}
+
 ```
 
-This function calculates the sum of two integer values (a and b). When passing in parameters, we have to describe the placeholder variables and their types. <br />
+This function calculates the sum of two integer values (num1 and num2). When passing in parameters, we have to describe the placeholder variables and their types. <br />
 `Calculate_sum` has a singular return type of int, straightforwardly providing the result of the addition operation.
 
 <br />
 
 ***Parameters:***
 
-    a:int: First integer value for addition.
-    b:int: Second integer value for addition.
+    num1:int: First integer value for addition.
+    num2:int: Second integer value for addition.
 
 <br />
 
 ***Returns:***
 
-An int representing the sum of the two input integers (a + b).
-Usage Example:
-
-<br />
-
-```rs
-main :: (){
-    result :: int = calculate_sum(5, 10)
-    print("Result: {!result}") // 15
-}
-```
+An int variable representing the sum of the two input integers (num1 + num2).
 
 <br />
 <br />
@@ -198,6 +200,15 @@ divide_numbers :: (a:float, b:float) -> Outcome<float, str> {
         } else {
             return Success(a / b) // float outcome
         }
+    }
+}
+
+main :: (){
+    result :: divide_numbers(10.0, 2.0)
+    
+    check result {
+        case Success(output) | print("Result: {:output}") // look for correct success case and return result
+        case Failure(error)  | print("Error: {:error}") // look for correct faliure case and return result
     }
 }
 ```
@@ -226,22 +237,6 @@ An Outcome encompassing two possible scenarios:
 
     Success<float>: Indicates a successful division, returning a float result.
     Failure<str>: Signifies an error scenario, returning an error message (str) for division by zero cases.
-
-<br />
-<br />
-
-Usage Example:
-
-```js
-main :: (){
-    result :: divide_numbers(10.0, 2.0)
-    
-    check result {
-        case Success(output) | print("Result: {:output}") // look for correct success case and return result
-        case Failure(error)  | print("Error: {:error}") // look for correct faliure case and return result
-    }
-}
-```
 
 <br />
 <br />
